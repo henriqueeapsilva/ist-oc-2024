@@ -1,10 +1,11 @@
 #ifndef CACHE_H
 #define CACHE_H
 
+#define L1_LINES 16
 #define WORD_SIZE 4                 // in bytes, i.e 32 bit words
-#define BLOCK_SIZE (16 * WORD_SIZE)    // in bytes
-#define DRAM_SIZE (1024 * BLOCK_SIZE) // in bytes
-#define L1_SIZE (256 * BLOCK_SIZE)      // in bytes
+#define BLOCK_SIZE (16 * WORD_SIZE)    // 64B 
+#define DRAM_SIZE (1024 * BLOCK_SIZE) // 64KB (1024 blocks in DRAM)
+#define L1_SIZE (256 * BLOCK_SIZE)      // 16KB (256 blocks in L1)
 #define L2_SIZE (512 * BLOCK_SIZE)    // in bytes
 
 #define MODE_READ 1
