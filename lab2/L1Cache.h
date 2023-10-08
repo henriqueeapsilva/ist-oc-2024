@@ -20,14 +20,14 @@ void initCache();
 void accessL1(uint32_t, uint8_t *, uint32_t);
 
 typedef struct CacheLine {
-  uint8_t Valid = 0;
+  uint8_t Valid;
   uint8_t Dirty;
   uint32_t Tag;
 } CacheLine;
 
 typedef struct Cache {
   uint32_t init;
-  CacheLine line[256]; // 256 lines?
+  CacheLine line[256];
 } Cache;
 
 /*********************** Interfaces *************************/

@@ -1,4 +1,4 @@
-#include "SimpleCache.h"
+#include "L1Cache.h"
 
 uint8_t L1Cache[L1_SIZE];
 uint8_t L2Cache[L2_SIZE];
@@ -30,18 +30,22 @@ void accessDRAM(uint32_t address, uint8_t *data, uint32_t mode) {
 
 /*********************** L1 cache *************************/
 
-void initCache() { SimpleCache.init = 0; }
+void initCache() { 
+  if(SimpleCache.init == 0) {
+    for(int i = 0; i < 256; i++) {
+      SimpleCache.line[i].Valid = 0;
+      SimpleCache.line[i].Dirty = 0;
+      SimpleCache.line[i].Tag = 0;
+    }
+  }
+}
 
 void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   uint32_t index, Tag, MemAddress;
   uint8_t TempBlock[BLOCK_SIZE];
 
-  /* init cache */
-  if (SimpleCache.init == 0) {
-    SimpleCache.line.Valid = 0;
-    SimpleCache.init = 1;
-  }
+  initCache();
 
   CacheLine *Line = &SimpleCache.line;
 
