@@ -47,15 +47,16 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   initCache();
 
-  CacheLine *Line = &SimpleCache.line;
+  // address: tag (32-8-4-2=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
 
-  Tag = address >> 10; // Why do I do this? (1 valid bit, 1 dirty bit, 8 index bit)
+  Tag = address >> 14; // Why do I do this?
 
-  index = address << 22;
-  index = index >> 24;
+  index = address >> 6 & 0xFF; // shift 2 bits to the left and aplly mask
 
-  MemAddress = address >> 10; // again this....!
-  MemAddress = MemAddress << 10; // address of the block in memory
+  MemAddress = address >> 14;
+  MemAddress = MemAddress << 14; // address of the block in memory
+
+  CacheLine *Line = &SimpleCache.line[index];
 
   /* access Cache*/
 
@@ -63,7 +64,7 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
     accessDRAM(MemAddress, TempBlock, MODE_READ); // get new block from DRAM
 
     if ((Line->Valid) && (Line->Dirty)) { // line has dirty block
-      MemAddress = Line->Tag << 3;        // get address of the block in memory
+      MemAddress = Line->Tag << 14;        // get address of the block in memory
       accessDRAM(MemAddress, &(L1Cache[0]), MODE_WRITE); // then write back old block
     }
 
