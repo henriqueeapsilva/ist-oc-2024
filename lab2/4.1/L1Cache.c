@@ -87,19 +87,16 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
     if (0 == (address % 8)) { // even word on block
       memcpy(data, &(Line[index].Data[offset]), WORD_SIZE);
     } else { // odd word on block
-      printf("ENTROU\n");
       memcpy(data, &(Line[index].Data[offset]), WORD_SIZE);
 
     }
     time += L1_READ_TIME;
-    printf("%d\n",(Line[index].Data[offset]));
   }
 
   if (mode == MODE_WRITE) { // write data from cache line
     if (!(address % 8)) {   // even word on block
       memcpy(&(Line[index].Data[offset]), data, WORD_SIZE);
     } else { // odd word on block
-    printf("entrou\n");
       memcpy(&(Line[index].Data[offset]), data, WORD_SIZE);
     }
     time += L1_WRITE_TIME;

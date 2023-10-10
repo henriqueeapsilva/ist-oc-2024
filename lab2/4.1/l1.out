@@ -1,1253 +1,672 @@
 
 Number of words: 1
 Write; Address 0; Value 0; Time 101
-0
 Read; Address 0; Value 0; Time 102
 
 Number of words: 2
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
-0
 Read; Address 0; Value 0; Time 103
-ENTROU
-4
 Read; Address 4; Value 4; Time 104
 
 Number of words: 4
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
-0
 Read; Address 0; Value 0; Time 105
-ENTROU
-4
 Read; Address 4; Value 4; Time 106
-8
 Read; Address 8; Value 8; Time 107
-ENTROU
-12
 Read; Address 12; Value 12; Time 108
 
 Number of words: 8
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
-0
 Read; Address 0; Value 0; Time 109
-ENTROU
-4
 Read; Address 4; Value 4; Time 110
-8
 Read; Address 8; Value 8; Time 111
-ENTROU
-12
 Read; Address 12; Value 12; Time 112
-16
 Read; Address 16; Value 16; Time 113
-ENTROU
-20
 Read; Address 20; Value 20; Time 114
-24
 Read; Address 24; Value 24; Time 115
-ENTROU
-28
 Read; Address 28; Value 28; Time 116
 
 Number of words: 16
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
 Write; Address 32; Value 32; Time 109
-entrou
 Write; Address 36; Value 36; Time 110
 Write; Address 40; Value 40; Time 111
-entrou
 Write; Address 44; Value 44; Time 112
 Write; Address 48; Value 48; Time 113
-entrou
 Write; Address 52; Value 52; Time 114
 Write; Address 56; Value 56; Time 115
-entrou
 Write; Address 60; Value 60; Time 116
-0
 Read; Address 0; Value 0; Time 117
-ENTROU
-4
 Read; Address 4; Value 4; Time 118
-8
 Read; Address 8; Value 8; Time 119
-ENTROU
-12
 Read; Address 12; Value 12; Time 120
-16
 Read; Address 16; Value 16; Time 121
-ENTROU
-20
 Read; Address 20; Value 20; Time 122
-24
 Read; Address 24; Value 24; Time 123
-ENTROU
-28
 Read; Address 28; Value 28; Time 124
-32
 Read; Address 32; Value 32; Time 125
-ENTROU
-36
 Read; Address 36; Value 36; Time 126
-40
 Read; Address 40; Value 40; Time 127
-ENTROU
-44
 Read; Address 44; Value 44; Time 128
-48
 Read; Address 48; Value 48; Time 129
-ENTROU
-52
 Read; Address 52; Value 52; Time 130
-56
 Read; Address 56; Value 56; Time 131
-ENTROU
-60
 Read; Address 60; Value 60; Time 132
 
 Number of words: 32
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
 Write; Address 32; Value 32; Time 109
-entrou
 Write; Address 36; Value 36; Time 110
 Write; Address 40; Value 40; Time 111
-entrou
 Write; Address 44; Value 44; Time 112
 Write; Address 48; Value 48; Time 113
-entrou
 Write; Address 52; Value 52; Time 114
 Write; Address 56; Value 56; Time 115
-entrou
 Write; Address 60; Value 60; Time 116
 Write; Address 64; Value 64; Time 217
-entrou
 Write; Address 68; Value 68; Time 218
 Write; Address 72; Value 72; Time 219
-entrou
 Write; Address 76; Value 76; Time 220
 Write; Address 80; Value 80; Time 221
-entrou
 Write; Address 84; Value 84; Time 222
 Write; Address 88; Value 88; Time 223
-entrou
 Write; Address 92; Value 92; Time 224
 Write; Address 96; Value 96; Time 225
-entrou
 Write; Address 100; Value 100; Time 226
 Write; Address 104; Value 104; Time 227
-entrou
 Write; Address 108; Value 108; Time 228
 Write; Address 112; Value 112; Time 229
-entrou
 Write; Address 116; Value 116; Time 230
 Write; Address 120; Value 120; Time 231
-entrou
 Write; Address 124; Value 124; Time 232
-0
 Read; Address 0; Value 0; Time 233
-ENTROU
-1
-Read; Address 4; Value 257; Time 234
-0
-Read; Address 8; Value 0; Time 235
-ENTROU
-12
+Read; Address 4; Value 4; Time 234
+Read; Address 8; Value 8; Time 235
 Read; Address 12; Value 12; Time 236
-16
-Read; Address 16; Value 16; Time 237
-ENTROU
-20
-Read; Address 20; Value 20; Time 238
-64
-Read; Address 24; Value 64; Time 239
-ENTROU
-68
-Read; Address 28; Value 68; Time 240
-72
-Read; Address 32; Value 72; Time 241
-ENTROU
-76
-Read; Address 36; Value 76; Time 242
-80
-Read; Address 40; Value 80; Time 243
-ENTROU
-84
-Read; Address 44; Value 84; Time 244
-88
-Read; Address 48; Value 88; Time 245
-ENTROU
-92
-Read; Address 52; Value 92; Time 246
-96
-Read; Address 56; Value 96; Time 247
-ENTROU
-100
-Read; Address 60; Value 100; Time 248
-64
+Read; Address 16; Value 257; Time 237
+Read; Address 20; Value 0; Time 238
+Read; Address 24; Value 24; Time 239
+Read; Address 28; Value 28; Time 240
+Read; Address 32; Value 32; Time 241
+Read; Address 36; Value 36; Time 242
+Read; Address 40; Value 40; Time 243
+Read; Address 44; Value 44; Time 244
+Read; Address 48; Value 64; Time 245
+Read; Address 52; Value 68; Time 246
+Read; Address 56; Value 72; Time 247
+Read; Address 60; Value 76; Time 248
 Read; Address 64; Value 64; Time 249
-ENTROU
-68
 Read; Address 68; Value 68; Time 250
-72
 Read; Address 72; Value 72; Time 251
-ENTROU
-76
 Read; Address 76; Value 76; Time 252
-80
 Read; Address 80; Value 80; Time 253
-ENTROU
-84
 Read; Address 84; Value 84; Time 254
-88
 Read; Address 88; Value 88; Time 255
-ENTROU
-92
 Read; Address 92; Value 92; Time 256
-96
 Read; Address 96; Value 96; Time 257
-ENTROU
-100
 Read; Address 100; Value 100; Time 258
-104
 Read; Address 104; Value 104; Time 259
-ENTROU
-108
 Read; Address 108; Value 108; Time 260
-112
 Read; Address 112; Value 112; Time 261
-ENTROU
-116
 Read; Address 116; Value 116; Time 262
-120
 Read; Address 120; Value 120; Time 263
-ENTROU
-124
 Read; Address 124; Value 124; Time 264
 
 Number of words: 64
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
 Write; Address 32; Value 32; Time 109
-entrou
 Write; Address 36; Value 36; Time 110
 Write; Address 40; Value 40; Time 111
-entrou
 Write; Address 44; Value 44; Time 112
 Write; Address 48; Value 48; Time 113
-entrou
 Write; Address 52; Value 52; Time 114
 Write; Address 56; Value 56; Time 115
-entrou
 Write; Address 60; Value 60; Time 116
 Write; Address 64; Value 64; Time 217
-entrou
 Write; Address 68; Value 68; Time 218
 Write; Address 72; Value 72; Time 219
-entrou
 Write; Address 76; Value 76; Time 220
 Write; Address 80; Value 80; Time 221
-entrou
 Write; Address 84; Value 84; Time 222
 Write; Address 88; Value 88; Time 223
-entrou
 Write; Address 92; Value 92; Time 224
 Write; Address 96; Value 96; Time 225
-entrou
 Write; Address 100; Value 100; Time 226
 Write; Address 104; Value 104; Time 227
-entrou
 Write; Address 108; Value 108; Time 228
 Write; Address 112; Value 112; Time 229
-entrou
 Write; Address 116; Value 116; Time 230
 Write; Address 120; Value 120; Time 231
-entrou
 Write; Address 124; Value 124; Time 232
 Write; Address 128; Value 128; Time 333
-entrou
 Write; Address 132; Value 132; Time 334
 Write; Address 136; Value 136; Time 335
-entrou
 Write; Address 140; Value 140; Time 336
 Write; Address 144; Value 144; Time 337
-entrou
 Write; Address 148; Value 148; Time 338
 Write; Address 152; Value 152; Time 339
-entrou
 Write; Address 156; Value 156; Time 340
 Write; Address 160; Value 160; Time 341
-entrou
 Write; Address 164; Value 164; Time 342
 Write; Address 168; Value 168; Time 343
-entrou
 Write; Address 172; Value 172; Time 344
 Write; Address 176; Value 176; Time 345
-entrou
 Write; Address 180; Value 180; Time 346
 Write; Address 184; Value 184; Time 347
-entrou
 Write; Address 188; Value 188; Time 348
 Write; Address 192; Value 192; Time 449
-entrou
 Write; Address 196; Value 196; Time 450
 Write; Address 200; Value 200; Time 451
-entrou
 Write; Address 204; Value 204; Time 452
 Write; Address 208; Value 208; Time 453
-entrou
 Write; Address 212; Value 212; Time 454
 Write; Address 216; Value 216; Time 455
-entrou
 Write; Address 220; Value 220; Time 456
 Write; Address 224; Value 224; Time 457
-entrou
 Write; Address 228; Value 228; Time 458
 Write; Address 232; Value 232; Time 459
-entrou
 Write; Address 236; Value 236; Time 460
 Write; Address 240; Value 240; Time 461
-entrou
 Write; Address 244; Value 244; Time 462
 Write; Address 248; Value 248; Time 463
-entrou
 Write; Address 252; Value 252; Time 464
-0
 Read; Address 0; Value 0; Time 465
-ENTROU
-1
-Read; Address 4; Value 257; Time 466
-0
-Read; Address 8; Value 0; Time 467
-ENTROU
-12
+Read; Address 4; Value 4; Time 466
+Read; Address 8; Value 8; Time 467
 Read; Address 12; Value 12; Time 468
-1
 Read; Address 16; Value 257; Time 469
-ENTROU
-0
 Read; Address 20; Value 0; Time 470
-64
-Read; Address 24; Value 64; Time 471
-ENTROU
-1
-Read; Address 28; Value 257; Time 472
-0
-Read; Address 32; Value 0; Time 473
-ENTROU
-76
-Read; Address 36; Value 76; Time 474
-80
-Read; Address 40; Value 80; Time 475
-ENTROU
-84
-Read; Address 44; Value 84; Time 476
-128
-Read; Address 48; Value 128; Time 477
-ENTROU
-132
-Read; Address 52; Value 132; Time 478
-136
-Read; Address 56; Value 136; Time 479
-ENTROU
-140
-Read; Address 60; Value 140; Time 480
-64
+Read; Address 24; Value 24; Time 471
+Read; Address 28; Value 28; Time 472
+Read; Address 32; Value 32; Time 473
+Read; Address 36; Value 36; Time 474
+Read; Address 40; Value 257; Time 475
+Read; Address 44; Value 0; Time 476
+Read; Address 48; Value 64; Time 477
+Read; Address 52; Value 68; Time 478
+Read; Address 56; Value 72; Time 479
+Read; Address 60; Value 76; Time 480
 Read; Address 64; Value 64; Time 481
-ENTROU
-1
-Read; Address 68; Value 257; Time 482
-0
-Read; Address 72; Value 0; Time 483
-ENTROU
-76
+Read; Address 68; Value 68; Time 482
+Read; Address 72; Value 72; Time 483
 Read; Address 76; Value 76; Time 484
-80
-Read; Address 80; Value 80; Time 485
-ENTROU
-84
-Read; Address 84; Value 84; Time 486
-128
-Read; Address 88; Value 128; Time 487
-ENTROU
-132
-Read; Address 92; Value 132; Time 488
-136
-Read; Address 96; Value 136; Time 489
-ENTROU
-140
-Read; Address 100; Value 140; Time 490
-144
-Read; Address 104; Value 144; Time 491
-ENTROU
-148
-Read; Address 108; Value 148; Time 492
-192
-Read; Address 112; Value 192; Time 493
-ENTROU
-196
-Read; Address 116; Value 196; Time 494
-200
-Read; Address 120; Value 200; Time 495
-ENTROU
-204
-Read; Address 124; Value 204; Time 496
-128
+Read; Address 80; Value 257; Time 485
+Read; Address 84; Value 0; Time 486
+Read; Address 88; Value 88; Time 487
+Read; Address 92; Value 92; Time 488
+Read; Address 96; Value 96; Time 489
+Read; Address 100; Value 100; Time 490
+Read; Address 104; Value 104; Time 491
+Read; Address 108; Value 108; Time 492
+Read; Address 112; Value 128; Time 493
+Read; Address 116; Value 132; Time 494
+Read; Address 120; Value 136; Time 495
+Read; Address 124; Value 140; Time 496
 Read; Address 128; Value 128; Time 497
-ENTROU
-132
 Read; Address 132; Value 132; Time 498
-136
 Read; Address 136; Value 136; Time 499
-ENTROU
-140
 Read; Address 140; Value 140; Time 500
-144
 Read; Address 144; Value 144; Time 501
-ENTROU
-148
 Read; Address 148; Value 148; Time 502
-192
-Read; Address 152; Value 192; Time 503
-ENTROU
-196
-Read; Address 156; Value 196; Time 504
-200
-Read; Address 160; Value 200; Time 505
-ENTROU
-204
-Read; Address 164; Value 204; Time 506
-208
-Read; Address 168; Value 208; Time 507
-ENTROU
-212
-Read; Address 172; Value 212; Time 508
-216
-Read; Address 176; Value 216; Time 509
-ENTROU
-220
-Read; Address 180; Value 220; Time 510
-224
-Read; Address 184; Value 224; Time 511
-ENTROU
-228
-Read; Address 188; Value 228; Time 512
-192
+Read; Address 152; Value 152; Time 503
+Read; Address 156; Value 156; Time 504
+Read; Address 160; Value 160; Time 505
+Read; Address 164; Value 164; Time 506
+Read; Address 168; Value 168; Time 507
+Read; Address 172; Value 172; Time 508
+Read; Address 176; Value 192; Time 509
+Read; Address 180; Value 196; Time 510
+Read; Address 184; Value 200; Time 511
+Read; Address 188; Value 204; Time 512
 Read; Address 192; Value 192; Time 513
-ENTROU
-196
 Read; Address 196; Value 196; Time 514
-200
 Read; Address 200; Value 200; Time 515
-ENTROU
-204
 Read; Address 204; Value 204; Time 516
-208
 Read; Address 208; Value 208; Time 517
-ENTROU
-212
 Read; Address 212; Value 212; Time 518
-216
 Read; Address 216; Value 216; Time 519
-ENTROU
-220
 Read; Address 220; Value 220; Time 520
-224
 Read; Address 224; Value 224; Time 521
-ENTROU
-228
 Read; Address 228; Value 228; Time 522
-232
 Read; Address 232; Value 232; Time 523
-ENTROU
-236
 Read; Address 236; Value 236; Time 524
-240
 Read; Address 240; Value 240; Time 525
-ENTROU
-244
 Read; Address 244; Value 244; Time 526
-248
 Read; Address 248; Value 248; Time 527
-ENTROU
-252
 Read; Address 252; Value 252; Time 528
 
 Number of words: 128
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
 Write; Address 32; Value 32; Time 109
-entrou
 Write; Address 36; Value 36; Time 110
 Write; Address 40; Value 40; Time 111
-entrou
 Write; Address 44; Value 44; Time 112
 Write; Address 48; Value 48; Time 113
-entrou
 Write; Address 52; Value 52; Time 114
 Write; Address 56; Value 56; Time 115
-entrou
 Write; Address 60; Value 60; Time 116
 Write; Address 64; Value 64; Time 217
-entrou
 Write; Address 68; Value 68; Time 218
 Write; Address 72; Value 72; Time 219
-entrou
 Write; Address 76; Value 76; Time 220
 Write; Address 80; Value 80; Time 221
-entrou
 Write; Address 84; Value 84; Time 222
 Write; Address 88; Value 88; Time 223
-entrou
 Write; Address 92; Value 92; Time 224
 Write; Address 96; Value 96; Time 225
-entrou
 Write; Address 100; Value 100; Time 226
 Write; Address 104; Value 104; Time 227
-entrou
 Write; Address 108; Value 108; Time 228
 Write; Address 112; Value 112; Time 229
-entrou
 Write; Address 116; Value 116; Time 230
 Write; Address 120; Value 120; Time 231
-entrou
 Write; Address 124; Value 124; Time 232
 Write; Address 128; Value 128; Time 333
-entrou
 Write; Address 132; Value 132; Time 334
 Write; Address 136; Value 136; Time 335
-entrou
 Write; Address 140; Value 140; Time 336
 Write; Address 144; Value 144; Time 337
-entrou
 Write; Address 148; Value 148; Time 338
 Write; Address 152; Value 152; Time 339
-entrou
 Write; Address 156; Value 156; Time 340
 Write; Address 160; Value 160; Time 341
-entrou
 Write; Address 164; Value 164; Time 342
 Write; Address 168; Value 168; Time 343
-entrou
 Write; Address 172; Value 172; Time 344
 Write; Address 176; Value 176; Time 345
-entrou
 Write; Address 180; Value 180; Time 346
 Write; Address 184; Value 184; Time 347
-entrou
 Write; Address 188; Value 188; Time 348
 Write; Address 192; Value 192; Time 449
-entrou
 Write; Address 196; Value 196; Time 450
 Write; Address 200; Value 200; Time 451
-entrou
 Write; Address 204; Value 204; Time 452
 Write; Address 208; Value 208; Time 453
-entrou
 Write; Address 212; Value 212; Time 454
 Write; Address 216; Value 216; Time 455
-entrou
 Write; Address 220; Value 220; Time 456
 Write; Address 224; Value 224; Time 457
-entrou
 Write; Address 228; Value 228; Time 458
 Write; Address 232; Value 232; Time 459
-entrou
 Write; Address 236; Value 236; Time 460
 Write; Address 240; Value 240; Time 461
-entrou
 Write; Address 244; Value 244; Time 462
 Write; Address 248; Value 248; Time 463
-entrou
 Write; Address 252; Value 252; Time 464
 Write; Address 256; Value 256; Time 565
-entrou
 Write; Address 260; Value 260; Time 566
 Write; Address 264; Value 264; Time 567
-entrou
 Write; Address 268; Value 268; Time 568
 Write; Address 272; Value 272; Time 569
-entrou
 Write; Address 276; Value 276; Time 570
 Write; Address 280; Value 280; Time 571
-entrou
 Write; Address 284; Value 284; Time 572
 Write; Address 288; Value 288; Time 573
-entrou
 Write; Address 292; Value 292; Time 574
 Write; Address 296; Value 296; Time 575
-entrou
 Write; Address 300; Value 300; Time 576
 Write; Address 304; Value 304; Time 577
-entrou
 Write; Address 308; Value 308; Time 578
 Write; Address 312; Value 312; Time 579
-entrou
 Write; Address 316; Value 316; Time 580
 Write; Address 320; Value 320; Time 681
-entrou
 Write; Address 324; Value 324; Time 682
 Write; Address 328; Value 328; Time 683
-entrou
 Write; Address 332; Value 332; Time 684
 Write; Address 336; Value 336; Time 685
-entrou
 Write; Address 340; Value 340; Time 686
 Write; Address 344; Value 344; Time 687
-entrou
 Write; Address 348; Value 348; Time 688
 Write; Address 352; Value 352; Time 689
-entrou
 Write; Address 356; Value 356; Time 690
 Write; Address 360; Value 360; Time 691
-entrou
 Write; Address 364; Value 364; Time 692
 Write; Address 368; Value 368; Time 693
-entrou
 Write; Address 372; Value 372; Time 694
 Write; Address 376; Value 376; Time 695
-entrou
 Write; Address 380; Value 380; Time 696
 Write; Address 384; Value 384; Time 797
-entrou
 Write; Address 388; Value 388; Time 798
 Write; Address 392; Value 392; Time 799
-entrou
 Write; Address 396; Value 396; Time 800
 Write; Address 400; Value 400; Time 801
-entrou
 Write; Address 404; Value 404; Time 802
 Write; Address 408; Value 408; Time 803
-entrou
 Write; Address 412; Value 412; Time 804
 Write; Address 416; Value 416; Time 805
-entrou
 Write; Address 420; Value 420; Time 806
 Write; Address 424; Value 424; Time 807
-entrou
 Write; Address 428; Value 428; Time 808
 Write; Address 432; Value 432; Time 809
-entrou
 Write; Address 436; Value 436; Time 810
 Write; Address 440; Value 440; Time 811
-entrou
 Write; Address 444; Value 444; Time 812
 Write; Address 448; Value 448; Time 913
-entrou
 Write; Address 452; Value 452; Time 914
 Write; Address 456; Value 456; Time 915
-entrou
 Write; Address 460; Value 460; Time 916
 Write; Address 464; Value 464; Time 917
-entrou
 Write; Address 468; Value 468; Time 918
 Write; Address 472; Value 472; Time 919
-entrou
 Write; Address 476; Value 476; Time 920
 Write; Address 480; Value 480; Time 921
-entrou
 Write; Address 484; Value 484; Time 922
 Write; Address 488; Value 488; Time 923
-entrou
 Write; Address 492; Value 492; Time 924
 Write; Address 496; Value 496; Time 925
-entrou
 Write; Address 500; Value 500; Time 926
 Write; Address 504; Value 504; Time 927
-entrou
 Write; Address 508; Value 508; Time 928
-0
 Read; Address 0; Value 0; Time 929
-ENTROU
-1
-Read; Address 4; Value 257; Time 930
-0
-Read; Address 8; Value 0; Time 931
-ENTROU
-12
+Read; Address 4; Value 4; Time 930
+Read; Address 8; Value 8; Time 931
 Read; Address 12; Value 12; Time 932
-1
 Read; Address 16; Value 257; Time 933
-ENTROU
-0
 Read; Address 20; Value 0; Time 934
-64
-Read; Address 24; Value 64; Time 935
-ENTROU
-1
-Read; Address 28; Value 257; Time 936
-0
-Read; Address 32; Value 0; Time 937
-ENTROU
-76
-Read; Address 36; Value 76; Time 938
-1
+Read; Address 24; Value 24; Time 935
+Read; Address 28; Value 28; Time 936
+Read; Address 32; Value 32; Time 937
+Read; Address 36; Value 36; Time 938
 Read; Address 40; Value 257; Time 939
-ENTROU
-0
 Read; Address 44; Value 0; Time 940
-128
-Read; Address 48; Value 128; Time 941
-ENTROU
-1
-Read; Address 52; Value 257; Time 942
-0
-Read; Address 56; Value 0; Time 943
-ENTROU
-140
-Read; Address 60; Value 140; Time 944
-64
+Read; Address 48; Value 64; Time 941
+Read; Address 52; Value 68; Time 942
+Read; Address 56; Value 72; Time 943
+Read; Address 60; Value 76; Time 944
 Read; Address 64; Value 64; Time 945
-ENTROU
-1
-Read; Address 68; Value 257; Time 946
-0
-Read; Address 72; Value 0; Time 947
-ENTROU
-76
+Read; Address 68; Value 68; Time 946
+Read; Address 72; Value 72; Time 947
 Read; Address 76; Value 76; Time 948
-1
 Read; Address 80; Value 257; Time 949
-ENTROU
-0
 Read; Address 84; Value 0; Time 950
-128
-Read; Address 88; Value 128; Time 951
-ENTROU
-1
-Read; Address 92; Value 257; Time 952
-0
-Read; Address 96; Value 0; Time 953
-ENTROU
-140
-Read; Address 100; Value 140; Time 954
-1
+Read; Address 88; Value 88; Time 951
+Read; Address 92; Value 92; Time 952
+Read; Address 96; Value 96; Time 953
+Read; Address 100; Value 100; Time 954
 Read; Address 104; Value 257; Time 955
-ENTROU
-0
 Read; Address 108; Value 0; Time 956
-192
-Read; Address 112; Value 192; Time 957
-ENTROU
-1
-Read; Address 116; Value 257; Time 958
-0
-Read; Address 120; Value 0; Time 959
-ENTROU
-204
-Read; Address 124; Value 204; Time 960
-128
+Read; Address 112; Value 128; Time 957
+Read; Address 116; Value 132; Time 958
+Read; Address 120; Value 136; Time 959
+Read; Address 124; Value 140; Time 960
 Read; Address 128; Value 128; Time 961
-ENTROU
-1
-Read; Address 132; Value 257; Time 962
-0
-Read; Address 136; Value 0; Time 963
-ENTROU
-140
+Read; Address 132; Value 132; Time 962
+Read; Address 136; Value 136; Time 963
 Read; Address 140; Value 140; Time 964
-1
 Read; Address 144; Value 257; Time 965
-ENTROU
-0
 Read; Address 148; Value 0; Time 966
-192
-Read; Address 152; Value 192; Time 967
-ENTROU
-1
-Read; Address 156; Value 257; Time 968
-0
-Read; Address 160; Value 0; Time 969
-ENTROU
-204
-Read; Address 164; Value 204; Time 970
-208
-Read; Address 168; Value 208; Time 971
-ENTROU
-212
-Read; Address 172; Value 212; Time 972
-0
-Read; Address 176; Value 256; Time 973
-ENTROU
-4
-Read; Address 180; Value 260; Time 974
-8
-Read; Address 184; Value 264; Time 975
-ENTROU
-12
-Read; Address 188; Value 268; Time 976
-192
+Read; Address 152; Value 152; Time 967
+Read; Address 156; Value 156; Time 968
+Read; Address 160; Value 160; Time 969
+Read; Address 164; Value 164; Time 970
+Read; Address 168; Value 257; Time 971
+Read; Address 172; Value 0; Time 972
+Read; Address 176; Value 192; Time 973
+Read; Address 180; Value 196; Time 974
+Read; Address 184; Value 200; Time 975
+Read; Address 188; Value 204; Time 976
 Read; Address 192; Value 192; Time 977
-ENTROU
-1
-Read; Address 196; Value 257; Time 978
-0
-Read; Address 200; Value 0; Time 979
-ENTROU
-204
+Read; Address 196; Value 196; Time 978
+Read; Address 200; Value 200; Time 979
 Read; Address 204; Value 204; Time 980
-208
-Read; Address 208; Value 208; Time 981
-ENTROU
-212
-Read; Address 212; Value 212; Time 982
-0
-Read; Address 216; Value 256; Time 983
-ENTROU
-4
-Read; Address 220; Value 260; Time 984
-8
-Read; Address 224; Value 264; Time 985
-ENTROU
-12
-Read; Address 228; Value 268; Time 986
-16
-Read; Address 232; Value 272; Time 987
-ENTROU
-20
-Read; Address 236; Value 276; Time 988
-64
-Read; Address 240; Value 320; Time 989
-ENTROU
-68
-Read; Address 244; Value 324; Time 990
-72
-Read; Address 248; Value 328; Time 991
-ENTROU
-76
-Read; Address 252; Value 332; Time 992
-0
+Read; Address 208; Value 257; Time 981
+Read; Address 212; Value 0; Time 982
+Read; Address 216; Value 216; Time 983
+Read; Address 220; Value 220; Time 984
+Read; Address 224; Value 224; Time 985
+Read; Address 228; Value 228; Time 986
+Read; Address 232; Value 232; Time 987
+Read; Address 236; Value 236; Time 988
+Read; Address 240; Value 256; Time 989
+Read; Address 244; Value 260; Time 990
+Read; Address 248; Value 264; Time 991
+Read; Address 252; Value 268; Time 992
 Read; Address 256; Value 256; Time 993
-ENTROU
-4
 Read; Address 260; Value 260; Time 994
-8
 Read; Address 264; Value 264; Time 995
-ENTROU
-12
 Read; Address 268; Value 268; Time 996
-16
 Read; Address 272; Value 272; Time 997
-ENTROU
-20
 Read; Address 276; Value 276; Time 998
-64
-Read; Address 280; Value 320; Time 999
-ENTROU
-68
-Read; Address 284; Value 324; Time 1000
-72
-Read; Address 288; Value 328; Time 1001
-ENTROU
-76
-Read; Address 292; Value 332; Time 1002
-80
-Read; Address 296; Value 336; Time 1003
-ENTROU
-84
-Read; Address 300; Value 340; Time 1004
-128
-Read; Address 304; Value 384; Time 1005
-ENTROU
-132
-Read; Address 308; Value 388; Time 1006
-136
-Read; Address 312; Value 392; Time 1007
-ENTROU
-140
-Read; Address 316; Value 396; Time 1008
-64
+Read; Address 280; Value 280; Time 999
+Read; Address 284; Value 284; Time 1000
+Read; Address 288; Value 288; Time 1001
+Read; Address 292; Value 292; Time 1002
+Read; Address 296; Value 296; Time 1003
+Read; Address 300; Value 300; Time 1004
+Read; Address 304; Value 320; Time 1005
+Read; Address 308; Value 324; Time 1006
+Read; Address 312; Value 328; Time 1007
+Read; Address 316; Value 332; Time 1008
 Read; Address 320; Value 320; Time 1009
-ENTROU
-68
 Read; Address 324; Value 324; Time 1010
-72
 Read; Address 328; Value 328; Time 1011
-ENTROU
-76
 Read; Address 332; Value 332; Time 1012
-80
 Read; Address 336; Value 336; Time 1013
-ENTROU
-84
 Read; Address 340; Value 340; Time 1014
-128
-Read; Address 344; Value 384; Time 1015
-ENTROU
-132
-Read; Address 348; Value 388; Time 1016
-136
-Read; Address 352; Value 392; Time 1017
-ENTROU
-140
-Read; Address 356; Value 396; Time 1018
-144
-Read; Address 360; Value 400; Time 1019
-ENTROU
-148
-Read; Address 364; Value 404; Time 1020
-192
-Read; Address 368; Value 448; Time 1021
-ENTROU
-196
-Read; Address 372; Value 452; Time 1022
-200
-Read; Address 376; Value 456; Time 1023
-ENTROU
-204
-Read; Address 380; Value 460; Time 1024
-128
+Read; Address 344; Value 344; Time 1015
+Read; Address 348; Value 348; Time 1016
+Read; Address 352; Value 352; Time 1017
+Read; Address 356; Value 356; Time 1018
+Read; Address 360; Value 360; Time 1019
+Read; Address 364; Value 364; Time 1020
+Read; Address 368; Value 384; Time 1021
+Read; Address 372; Value 388; Time 1022
+Read; Address 376; Value 392; Time 1023
+Read; Address 380; Value 396; Time 1024
 Read; Address 384; Value 384; Time 1025
-ENTROU
-132
 Read; Address 388; Value 388; Time 1026
-136
 Read; Address 392; Value 392; Time 1027
-ENTROU
-140
 Read; Address 396; Value 396; Time 1028
-144
 Read; Address 400; Value 400; Time 1029
-ENTROU
-148
 Read; Address 404; Value 404; Time 1030
-192
-Read; Address 408; Value 448; Time 1031
-ENTROU
-196
-Read; Address 412; Value 452; Time 1032
-200
-Read; Address 416; Value 456; Time 1033
-ENTROU
-204
-Read; Address 420; Value 460; Time 1034
-208
-Read; Address 424; Value 464; Time 1035
-ENTROU
-212
-Read; Address 428; Value 468; Time 1036
-216
-Read; Address 432; Value 472; Time 1037
-ENTROU
-220
-Read; Address 436; Value 476; Time 1038
-224
-Read; Address 440; Value 480; Time 1039
-ENTROU
-228
-Read; Address 444; Value 484; Time 1040
-192
+Read; Address 408; Value 408; Time 1031
+Read; Address 412; Value 412; Time 1032
+Read; Address 416; Value 416; Time 1033
+Read; Address 420; Value 420; Time 1034
+Read; Address 424; Value 424; Time 1035
+Read; Address 428; Value 428; Time 1036
+Read; Address 432; Value 448; Time 1037
+Read; Address 436; Value 452; Time 1038
+Read; Address 440; Value 456; Time 1039
+Read; Address 444; Value 460; Time 1040
 Read; Address 448; Value 448; Time 1041
-ENTROU
-196
 Read; Address 452; Value 452; Time 1042
-200
 Read; Address 456; Value 456; Time 1043
-ENTROU
-204
 Read; Address 460; Value 460; Time 1044
-208
 Read; Address 464; Value 464; Time 1045
-ENTROU
-212
 Read; Address 468; Value 468; Time 1046
-216
 Read; Address 472; Value 472; Time 1047
-ENTROU
-220
 Read; Address 476; Value 476; Time 1048
-224
 Read; Address 480; Value 480; Time 1049
-ENTROU
-228
 Read; Address 484; Value 484; Time 1050
-232
 Read; Address 488; Value 488; Time 1051
-ENTROU
-236
 Read; Address 492; Value 492; Time 1052
-240
 Read; Address 496; Value 496; Time 1053
-ENTROU
-244
 Read; Address 500; Value 500; Time 1054
-248
 Read; Address 504; Value 504; Time 1055
-ENTROU
-252
 Read; Address 508; Value 508; Time 1056
 
 Number of words: 256
 Write; Address 0; Value 0; Time 101
-entrou
 Write; Address 4; Value 4; Time 102
 Write; Address 8; Value 8; Time 103
-entrou
 Write; Address 12; Value 12; Time 104
 Write; Address 16; Value 16; Time 105
-entrou
 Write; Address 20; Value 20; Time 106
 Write; Address 24; Value 24; Time 107
-entrou
 Write; Address 28; Value 28; Time 108
 Write; Address 32; Value 32; Time 109
-entrou
 Write; Address 36; Value 36; Time 110
 Write; Address 40; Value 40; Time 111
-entrou
 Write; Address 44; Value 44; Time 112
 Write; Address 48; Value 48; Time 113
-entrou
 Write; Address 52; Value 52; Time 114
 Write; Address 56; Value 56; Time 115
-entrou
 Write; Address 60; Value 60; Time 116
 Write; Address 64; Value 64; Time 217
-entrou
 Write; Address 68; Value 68; Time 218
 Write; Address 72; Value 72; Time 219
-entrou
 Write; Address 76; Value 76; Time 220
 Write; Address 80; Value 80; Time 221
-entrou
 Write; Address 84; Value 84; Time 222
 Write; Address 88; Value 88; Time 223
-entrou
 Write; Address 92; Value 92; Time 224
 Write; Address 96; Value 96; Time 225
-entrou
 Write; Address 100; Value 100; Time 226
 Write; Address 104; Value 104; Time 227
-entrou
 Write; Address 108; Value 108; Time 228
 Write; Address 112; Value 112; Time 229
-entrou
 Write; Address 116; Value 116; Time 230
 Write; Address 120; Value 120; Time 231
-entrou
 Write; Address 124; Value 124; Time 232
 Write; Address 128; Value 128; Time 333
-entrou
 Write; Address 132; Value 132; Time 334
 Write; Address 136; Value 136; Time 335
-entrou
 Write; Address 140; Value 140; Time 336
 Write; Address 144; Value 144; Time 337
-entrou
 Write; Address 148; Value 148; Time 338
 Write; Address 152; Value 152; Time 339
-entrou
 Write; Address 156; Value 156; Time 340
 Write; Address 160; Value 160; Time 341
-entrou
 Write; Address 164; Value 164; Time 342
 Write; Address 168; Value 168; Time 343
-entrou
 Write; Address 172; Value 172; Time 344
 Write; Address 176; Value 176; Time 345
-entrou
 Write; Address 180; Value 180; Time 346
 Write; Address 184; Value 184; Time 347
-entrou
 Write; Address 188; Value 188; Time 348
 Write; Address 192; Value 192; Time 449
-entrou
 Write; Address 196; Value 196; Time 450
 Write; Address 200; Value 200; Time 451
-entrou
 Write; Address 204; Value 204; Time 452
 Write; Address 208; Value 208; Time 453
-entrou
 Write; Address 212; Value 212; Time 454
 Write; Address 216; Value 216; Time 455
-entrou
 Write; Address 220; Value 220; Time 456
 Write; Address 224; Value 224; Time 457
-entrou
 Write; Address 228; Value 228; Time 458
 Write; Address 232; Value 232; Time 459
-entrou
 Write; Address 236; Value 236; Time 460
 Write; Address 240; Value 240; Time 461
-entrou
 Write; Address 244; Value 244; Time 462
 Write; Address 248; Value 248; Time 463
-entrou
 Write; Address 252; Value 252; Time 464
 Write; Address 256; Value 256; Time 565
-entrou
 Write; Address 260; Value 260; Time 566
 Write; Address 264; Value 264; Time 567
-entrou
 Write; Address 268; Value 268; Time 568
 Write; Address 272; Value 272; Time 569
-entrou
 Write; Address 276; Value 276; Time 570
 Write; Address 280; Value 280; Time 571
-entrou
 Write; Address 284; Value 284; Time 572
 Write; Address 288; Value 288; Time 573
-entrou
 Write; Address 292; Value 292; Time 574
 Write; Address 296; Value 296; Time 575
-entrou
 Write; Address 300; Value 300; Time 576
 Write; Address 304; Value 304; Time 577
-entrou
 Write; Address 308; Value 308; Time 578
 Write; Address 312; Value 312; Time 579
-entrou
 Write; Address 316; Value 316; Time 580
 Write; Address 320; Value 320; Time 681
-entrou
 Write; Address 324; Value 324; Time 682
 Write; Address 328; Value 328; Time 683
-entrou
 Write; Address 332; Value 332; Time 684
 Write; Address 336; Value 336; Time 685
-entrou
 Write; Address 340; Value 340; Time 686
 Write; Address 344; Value 344; Time 687
-entrou
 Write; Address 348; Value 348; Time 688
 Write; Address 352; Value 352; Time 689
-entrou
 Write; Address 356; Value 356; Time 690
 Write; Address 360; Value 360; Time 691
-entrou
 Write; Address 364; Value 364; Time 692
 Write; Address 368; Value 368; Time 693
-entrou
 Write; Address 372; Value 372; Time 694
 Write; Address 376; Value 376; Time 695
-entrou
 Write; Address 380; Value 380; Time 696
 Write; Address 384; Value 384; Time 797
-entrou
 Write; Address 388; Value 388; Time 798
 Write; Address 392; Value 392; Time 799
-entrou
 Write; Address 396; Value 396; Time 800
 Write; Address 400; Value 400; Time 801
-entrou
 Write; Address 404; Value 404; Time 802
 Write; Address 408; Value 408; Time 803
-entrou
 Write; Address 412; Value 412; Time 804
 Write; Address 416; Value 416; Time 805
-entrou
 Write; Address 420; Value 420; Time 806
 Write; Address 424; Value 424; Time 807
-entrou
 Write; Address 428; Value 428; Time 808
 Write; Address 432; Value 432; Time 809
-entrou
 Write; Address 436; Value 436; Time 810
 Write; Address 440; Value 440; Time 811
-entrou
 Write; Address 444; Value 444; Time 812
 Write; Address 448; Value 448; Time 913
-entrou
 Write; Address 452; Value 452; Time 914
 Write; Address 456; Value 456; Time 915
-entrou
 Write; Address 460; Value 460; Time 916
 Write; Address 464; Value 464; Time 917
-entrou
 Write; Address 468; Value 468; Time 918
 Write; Address 472; Value 472; Time 919
-entrou
 Write; Address 476; Value 476; Time 920
 Write; Address 480; Value 480; Time 921
-entrou
 Write; Address 484; Value 484; Time 922
 Write; Address 488; Value 488; Time 923
-entrou
 Write; Address 492; Value 492; Time 924
 Write; Address 496; Value 496; Time 925
-entrou
 Write; Address 500; Value 500; Time 926
 Write; Address 504; Value 504; Time 927
-entrou
 Write; Address 508; Value 508; Time 928
 Write; Address 512; Value 512; Time 1029
-entrou
 Write; Address 516; Value 516; Time 1030
 Write; Address 520; Value 520; Time 1031
-entrou
 Write; Address 524; Value 524; Time 1032
 Write; Address 528; Value 528; Time 1033
-entrou
 Write; Address 532; Value 532; Time 1034
 Write; Address 536; Value 536; Time 1035
-entrou
 Write; Address 540; Value 540; Time 1036
 Write; Address 544; Value 544; Time 1037
-entrou
 Write; Address 548; Value 548; Time 1038
 Write; Address 552; Value 552; Time 1039
-entrou
 Write; Address 556; Value 556; Time 1040
 Write; Address 560; Value 560; Time 1041
-entrou
 Write; Address 564; Value 564; Time 1042
 Write; Address 568; Value 568; Time 1043
-entrou
 Write; Address 572; Value 572; Time 1044
