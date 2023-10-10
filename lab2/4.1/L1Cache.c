@@ -32,6 +32,7 @@ void accessDRAM(uint32_t address, uint8_t *data, uint32_t mode) {
 
 void initCache() { 
   if(SimpleCache.init == 0) {
+    SimpleCache.init = 1;
     for(int i = 0; i < 256; i++) {
       SimpleCache.line[i].Valid = 0;
       SimpleCache.line[i].Dirty = 0;
@@ -49,7 +50,7 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   // address: tag (32-8-4-2=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
 
-  Tag = address >> 14; // Why do I do this?
+  Tag = address >> 14;
 
   index = address >> 6 & 0xFF; // shift 2 bits to the left and aplly mask
 
