@@ -76,7 +76,7 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
       accessDRAM(MemAddress, &(Line[index].Data[offset]), MODE_WRITE); // then write back old block
     }
 
-    memcpy(&(L1Cache[index]), TempBlock,
+    memcpy(&(Line[index].Data[offset]), TempBlock,
            BLOCK_SIZE); // copy new block to cache line
     Line->Valid = 1;
     Line->Tag = Tag;
