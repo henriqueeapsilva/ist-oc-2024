@@ -48,24 +48,24 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
   uint8_t TempBlock[BLOCK_SIZE];
 
   // address: tag (32-8-6=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
-  printf("----------------\n");
-  printf("Address: 0x%08x\t %d\n", address, address);
+  //printf("----------------\n");
+  //printf("Address: 0x%08x\t %d\n", address, address);
   Tag = address >> 14;
-  printf("Tag: 0x%08x \t %d\n", Tag, Tag);
+  //printf("Tag: 0x%08x \t %d\n", Tag, Tag);
 
   index = address >> 6 & 0xFF; // shift 2 bits to the left and aplly mask
-  printf("Index: 0x%08x\t %d\n", index, index);
+  //printf("Index: 0x%08x\t %d\n", index, index);
 
   offset = address << 26;
   offset = offset >> 26;
-  printf("Offset: 0x%08x\t %d\n", offset, offset);
+  //printf("Offset: 0x%08x\t %d\n", offset, offset);
 
   MemAddress = address >> 14;
   MemAddress = MemAddress << 14; // address of the block in memory
-  printf("Mem Address: 0x%08x\t %d\n", MemAddress, MemAddress);
-  printf("----------------\n"); 
+  //printf("Mem Address: 0x%08x\t %d\n", MemAddress, MemAddress);
+  //printf("----------------\n"); 
   CacheLine *Line = &L1.line[index];
-  printf("%d\n", Line->Valid);
+  //printf("%d\n", Line->Valid);
   /* access Cache*/
 
   if (!Line->Valid || Line->Tag != Tag) {         // if block not present - miss
@@ -73,7 +73,7 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
     if ((Line->Valid) && (Line->Dirty)) { // line has dirty block
       MemAddress = Line->Tag << 14;        // get address of the block in memory
-      accessDRAM(MemAddress, &(L1Cache[index]), MODE_WRITE); // then write back old block
+      accessDRAM(MemAddress, &(Line[index].Data[offset]), MODE_WRITE); // then write back old block
     }
 
     memcpy(&(L1Cache[index]), TempBlock,
@@ -85,21 +85,22 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   if (mode == MODE_READ) {    // read data from cache line
     if (0 == (address % 8)) { // even word on block
-      memcpy(data, &(L1Cache[index]), WORD_SIZE);
+      memcpy(data, &(Line[index].Data[offset]), WORD_SIZE);
     } else { // odd word on block
-      //printf("ENTROU\n");
-      memcpy(data, &(L1Cache[WORD_SIZE]), WORD_SIZE);
+      printf("ENTROU\n");
+      memcpy(data, &(Line[index].Data[offset]), WORD_SIZE);
 
     }
     time += L1_READ_TIME;
+    printf("%d\n",(Line[index].Data[offset]));
   }
 
   if (mode == MODE_WRITE) { // write data from cache line
     if (!(address % 8)) {   // even word on block
-      memcpy(&(L1Cache[index]), data, WORD_SIZE);
+      memcpy(&(Line[index].Data[offset]), data, WORD_SIZE);
     } else { // odd word on block
-    //printf("entrou\n");
-      memcpy(&(L1Cache[WORD_SIZE]), data, WORD_SIZE);
+    printf("entrou\n");
+      memcpy(&(Line[index].Data[offset]), data, WORD_SIZE);
     }
     time += L1_WRITE_TIME;
     Line->Dirty = 1;
