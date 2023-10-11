@@ -28,8 +28,6 @@ typedef struct CacheLine {
   uint8_t Data[BLOCK_SIZE];
 } CacheLine;
 
-
-
 typedef struct L1Cache {
   CacheLine line[L1_SIZE / BLOCK_SIZE];
 } L1Cache;

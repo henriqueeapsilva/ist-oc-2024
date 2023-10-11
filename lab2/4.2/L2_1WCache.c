@@ -57,10 +57,9 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   uint32_t index, Tag, offset;
 
-  // address: tag (32-8-6=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
   Tag = address >> 14;
 
-  index = (address >> 6) & 0xFF; // shift 6 bits to the right and aplly mask
+  index = (address >> 6) & 0xFF;
 
   offset = address & (BLOCK_SIZE - 1);
   
@@ -69,27 +68,27 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   if (Line->Valid && Line->Tag == Tag){ // hit
     
-    if (mode == MODE_READ) { // read
+    if (mode == MODE_READ) {
       memcpy(data, &Line->Data[offset], WORD_SIZE);
       time += L1_READ_TIME;
     }
 
-    if (mode == MODE_WRITE) { // write
+    if (mode == MODE_WRITE) {
       memcpy(&Line->Data[offset], data, WORD_SIZE);
       time += L1_WRITE_TIME;
       Line->Dirty = 1;
     }
   }
   
-  else {
-    if(Line->Dirty){
+  else { // miss
+    if(Line->Dirty) { // atualizar bloco na L2
       uint32_t addressL2 = ((Line->Tag << 8) + index) << 6;
       accessL2(addressL2, Line->Data, MODE_WRITE);
       Line->Data[0] = 0;
       Line->Data[WORD_SIZE] = 0;
     }
 
-    accessL2(address - offset, Line->Data , MODE_READ);
+    accessL2(address - offset, Line->Data , MODE_READ); // substituir bloco na L1
     
     if (mode == MODE_READ) {
       memcpy(data, &(Line->Data[offset]), WORD_SIZE);
@@ -114,7 +113,7 @@ void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
   // address: tag (32-9-6=17)
   Tag = address >> 15;
 
-  index = (address >> 6) & 0x1FF; // shift 6 bits to the right and aplly mask
+  index = (address >> 6) & 0x1FF;
 
   offset = address & (BLOCK_SIZE - 1);
 
@@ -125,12 +124,12 @@ void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
 
   if (Line->Valid && Line->Tag == Tag){ // hit
       
-    if (mode == MODE_READ) { // read
+    if (mode == MODE_READ) {
       memcpy(data, &Line->Data[offset], WORD_SIZE);
       time += L2_READ_TIME;
     }
 
-    if (mode == MODE_WRITE) { // write
+    if (mode == MODE_WRITE) {
       memcpy(&Line->Data[offset], data, WORD_SIZE);
       time += L2_WRITE_TIME;
       Line->Dirty = 1;
@@ -138,14 +137,14 @@ void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
   }
 
   else {
-    if(Line->Dirty){
+    if(Line->Dirty) { // atualizar bloco na memória
       uint32_t MemAddressOld = ((Line->Tag << 9) + index) << 6;
       accessDRAM(MemAddressOld, Line->Data, MODE_WRITE);
       Line->Data[0] = 0;
       Line->Data[WORD_SIZE] = 0;
     }
 
-    accessDRAM(MemAddress, Line->Data , MODE_READ);
+    accessDRAM(MemAddress, Line->Data , MODE_READ); // substituir bloco na L2
     
     if (mode == MODE_READ) {
       memcpy(data, &(Line->Data[offset]), WORD_SIZE);

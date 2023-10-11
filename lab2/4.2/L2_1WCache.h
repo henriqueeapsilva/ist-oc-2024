@@ -41,7 +41,6 @@ typedef struct Cache {
   L2Cache L2;
 } Cache;
 
-
 /*********************** Interfaces *************************/
 
 void read(uint32_t, uint8_t *);
