@@ -1,8 +1,8 @@
-#include "L1Cache.h"
+#include "L2_1WCache.h"
 
 uint8_t DRAM[DRAM_SIZE];
 uint32_t time;
-Cache L1;
+Cache cache;
 
 /**************** Time Manipulation ***************/
 void resetTime() { time = 0; }
@@ -27,36 +27,46 @@ void accessDRAM(uint32_t address, uint8_t *data, uint32_t mode) {
 }
 
 /*********************** L1 cache *************************/
-void initCache() { L1.init = 0; }
+void initCache() { 
+  for(int i = 0; i < L1_SIZE / BLOCK_SIZE; i++) {
+    cache.L1.line[i].Valid = 0;
+    cache.L1.line[i].Dirty = 0;
+    cache.L1.line[i].Tag = 0;
+    for (int j = 0; j < BLOCK_SIZE; j+=WORD_SIZE) {
+      cache.L1.line[i].Data[j] = 0;
+    }
+  
+  }
+  for(int i = 0; i < L2_SIZE / BLOCK_SIZE; i++) {
+    cache.L2.line[i].Valid = 0;
+    cache.L2.line[i].Dirty = 0;
+    cache.L2.line[i].Tag = 0;
+    for (int j = 0; j < BLOCK_SIZE; j+=WORD_SIZE) {
+      cache.L2.line[i].Data[j] = 0;
+    }
+  }
+
+  for (int i = 0; i < DRAM_SIZE; i+=WORD_SIZE) {
+    DRAM[i] = 0;
+  }
+  
+  cache.init = 1;
+}
 
 void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   uint32_t index, Tag, MemAddress, offset;
   uint8_t TempBlock[BLOCK_SIZE];
 
-  if(!L1.init) { // if cache not initialized
-    for(int i = 0; i < L1_SIZE / BLOCK_SIZE; i++) {
-      L1.line[i].Valid = 0;
-      L1.line[i].Dirty = 0;
-      L1.line[i].Tag = 0;
-      for (int j = 0; j < BLOCK_SIZE; j+=WORD_SIZE) {
-        L1.line[i].Data[j] = 0;
-      }
-    }
-    L1.init = 1;
-  }
-
   // address: tag (32-8-6=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
   Tag = address >> 14;
 
-  index = (address >> 6) & 0xFF; // shift 2 bits to the left and aplly mask
+  index = (address >> 6) & 0xFF; // shift 6 bits to the right and aplly mask
 
   offset = address & (BLOCK_SIZE - 1);
 
   MemAddress = (address >> 14) << 14;
   
-  printf("---------\n%d \t %d \t %d\n----------\n", Tag, index, offset);
-
   CacheLine* Line = L1.line;
   Line += index;
 
@@ -84,6 +94,10 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
     time += L1_WRITE_TIME;
     Line->Dirty = 1;
   }
+}
+
+void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
+
 }
 
 void read(uint32_t address, uint8_t *data) {
