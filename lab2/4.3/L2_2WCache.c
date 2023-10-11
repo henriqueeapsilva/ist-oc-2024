@@ -1,4 +1,4 @@
-#include "L2_1WCache.h"
+#include "L2_2WCache.h"
 
 uint8_t DRAM[DRAM_SIZE];
 uint32_t time;
@@ -37,12 +37,15 @@ void initCache() {
     }
   
   }
-  for(int i = 0; i < L2_SIZE / BLOCK_SIZE; i++) {
-    cache.L2.line[i].Valid = 0;
-    cache.L2.line[i].Dirty = 0;
-    cache.L2.line[i].Tag = 0;
-    for (int j = 0; j < BLOCK_SIZE; j+=WORD_SIZE) {
-      cache.L2.line[i].Data[j] = 0;
+  for(int i = 0; i < L2_SIZE / BLOCK_SIZE / L2_ASSOCIATIVITY; i++) {
+    for(int k = 0; k < L2_ASSOCIATIVITY; k++) {
+      cache.L2.line[i][k].Valid = 0;
+      cache.L2.line[i][k].Dirty = 0;
+      cache.L2.line[i][k].Tag = 0;
+      cache.L2.line[i][k].Time = 0;
+      for (int j = 0; j < BLOCK_SIZE; j+=WORD_SIZE) {
+        cache.L2.line[i][k].Data[j] = 0;
+      }
     }
   }
 
@@ -83,12 +86,11 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
   
   else {
     if(Line->Dirty){
-      uint32_t addressL2 = ((Line->Tag << 8) + index) << 6;
+      uint32_t addressL2 = ((Tag << 8) + index) << 6;
       accessL2(addressL2, Line->Data, MODE_WRITE);
       Line->Data[0] = 0;
       Line->Data[WORD_SIZE] = 0;
     }
-
     accessL2(address - offset, Line->Data , MODE_READ);
     
     if (mode == MODE_READ) {
@@ -110,56 +112,81 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
 void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
   uint32_t index, Tag, MemAddress, offset;
-
-  // address: tag (32-9-6=17)
-  Tag = address >> 15;
+  int i = 0;
+  int found = 0;
+  // address: tag (32-8-6=17)
+  Tag = address >> 14;
 
   index = (address >> 6) & 0x1FF; // shift 6 bits to the right and aplly mask
 
   offset = address & (BLOCK_SIZE - 1);
 
-  MemAddress = (address >> 15) << 15;
+  MemAddress = (address >> 14) << 14;
   
-  CacheLine* Line = cache.L2.line;
+  CacheLine *Line = *cache.L2.line;
   Line += index;
 
-  if (Line->Valid && Line->Tag == Tag){ // hit
-      
+  for(;i < L2_ASSOCIATIVITY; i++) {
+    if (Line[i].Valid && Line[i].Tag == Tag) {
+      found = 1;
+      break;
+    }
+  }
+
+  if (found){ // hit
     if (mode == MODE_READ) { // read
-      memcpy(data, &Line->Data[offset], WORD_SIZE);
+      memcpy(data, &Line[i].Data[offset], WORD_SIZE);
       time += L2_READ_TIME;
+      Line[i].Time += time;
     }
 
     if (mode == MODE_WRITE) { // write
-      memcpy(&Line->Data[offset], data, WORD_SIZE);
+      memcpy(&Line[i].Data[offset], data, WORD_SIZE);
       time += L2_WRITE_TIME;
-      Line->Dirty = 1;
+      Line[i].Dirty = 1;
+      Line[i].Time += time;
     }
   }
 
   else {
+    int idx = 0;
+    int min = Line[0].Time;
+
+    for(int i = 0; i < L2_ASSOCIATIVITY; i++){
+      if(!Line[i].Valid){
+        idx = i;
+        break;
+      }
+      if(Line[i].Time < min){
+        min = Line[i].Time;
+        idx = i;
+      }
+    }
+
     if(Line->Dirty){
-      uint32_t MemAddressOld = ((Line->Tag << 9) + index) << 6;
-      accessDRAM(MemAddressOld, Line->Data, MODE_WRITE);
+      uint32_t MemAddressOld = ((Line[i].Tag << 8) + index) << 6;
+      accessDRAM(MemAddressOld, Line[idx].Data, MODE_WRITE);
       Line->Data[0] = 0;
       Line->Data[WORD_SIZE] = 0;
     }
 
-    accessDRAM(MemAddress, Line->Data , MODE_READ);
+    accessDRAM(MemAddress, Line[idx].Data , MODE_READ);
     
     if (mode == MODE_READ) {
-      memcpy(data, &(Line->Data[offset]), WORD_SIZE);
+      memcpy(data, &(Line[idx].Data[offset]), WORD_SIZE);
       time += L2_READ_TIME;
-      Line->Dirty = 0; 
-      Line->Valid = 1;
-      Line->Tag = Tag;
+      Line[idx].Dirty = 0; 
+      Line[idx].Valid = 1;
+      Line[idx].Tag = Tag;
+      Line[idx].Time = time;
     }
     if (mode == MODE_WRITE) {
-      memcpy(&(Line->Data[offset]), data, WORD_SIZE);
+      memcpy(&(Line[idx].Data[offset]), data, WORD_SIZE);
       time += L2_WRITE_TIME;
-      Line->Dirty = 1;
-      Line->Valid = 1;
-      Line->Tag = Tag;
+      Line[idx].Dirty = 1;
+      Line[idx].Valid = 1;
+      Line[idx].Tag = Tag;
+      Line[idx].Time = time;
     }
   }
 }

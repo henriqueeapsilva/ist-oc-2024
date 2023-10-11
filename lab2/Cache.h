@@ -1,6 +1,7 @@
 #ifndef CACHE_H
 #define CACHE_H
 
+#define L2_ASSOCIATIVITY 2
 #define WORD_SIZE 4                 // in bytes, i.e 32 bit words
 #define BLOCK_SIZE (16 * WORD_SIZE)    // 64B 
 #define DRAM_SIZE (1024 * BLOCK_SIZE) // 64KB (1024 blocks in DRAM)
