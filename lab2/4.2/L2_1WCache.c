@@ -49,7 +49,7 @@ void initCache() {
   for (int i = 0; i < DRAM_SIZE; i+=WORD_SIZE) {
     DRAM[i] = 0;
   }
-  
+
   cache.init = 1;
 }
 
@@ -67,11 +67,37 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
   MemAddress = (address >> 14) << 14;
   
-  CacheLine* Line = L1.line;
+  CacheLine* Line = cache.L1.line;
   Line += index;
 
+  if (Line->Valid && Line->Tag == Tag){ // hit
+    
+    if (mode == MODE_READ) { // read
+      memcpy(data, &Line->Data[offset], WORD_SIZE);
+      time += L1_READ_TIME;
+    }
+
+    if (mode == MODE_WRITE) { // write
+      memcpy(&Line->Data[offset], data, WORD_SIZE);
+      time += L1_WRITE_TIME;
+      Line->Dirty = 1;
+    }
+  }
+  
+  else {
+    if(Line->Dirty){
+      accessL2(address,Line->Data,MODE_WRITE);
+      Line->Data[0] = 0;
+      Line->Data[WORD_SIZE] = 0;
+    }
+    
+
+
+
+  }
+
   if (!Line->Valid || Line->Tag != Tag) {         
-    accessDRAM(MemAddress, TempBlock, MODE_READ);
+    accessL2(MemAddress, TempBlock, MODE_READ);
 
     if ((Line->Valid) && (Line->Dirty)) {
       MemAddress = Line->Tag << 14;
@@ -97,7 +123,45 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 }
 
 void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
+  uint32_t index, Tag, MemAddress, offset;
+  uint8_t TempBlock[BLOCK_SIZE];
 
+  // address: tag (32-9-6=17)
+  Tag = address >> 15;
+
+  index = (address >> 6) & 0x1FF; // shift 6 bits to the right and aplly mask
+
+  offset = address & (BLOCK_SIZE - 1);
+
+  MemAddress = (address >> 15) << 15;
+  
+  CacheLine* Line = cache.L2.line;
+  Line += index;
+
+  if (!Line->Valid || Line->Tag != Tag) {         
+  accessDRAM(MemAddress, TempBlock, MODE_READ);
+
+  if ((Line->Valid) && (Line->Dirty)) {
+    MemAddress = Line->Tag << 14;
+    accessDRAM(MemAddress, Line->Data, MODE_WRITE);
+  }
+
+    memcpy(Line->Data, TempBlock, BLOCK_SIZE);
+    Line->Valid = 1;
+    Line->Tag = Tag;
+    Line->Dirty = 0;
+  }
+
+  if (mode == MODE_READ) { // read
+    memcpy(data, &Line->Data[offset], WORD_SIZE);
+    time += L1_READ_TIME;
+  }
+
+  if (mode == MODE_WRITE) { // write
+    memcpy(&Line->Data[offset], data, WORD_SIZE);
+    time += L1_WRITE_TIME;
+    Line->Dirty = 1;
+  }
 }
 
 void read(uint32_t address, uint8_t *data) {
