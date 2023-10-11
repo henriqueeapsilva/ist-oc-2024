@@ -55,8 +55,7 @@ void initCache() {
 
 void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
 
-  uint32_t index, Tag, MemAddress, offset;
-  uint8_t TempBlock[BLOCK_SIZE];
+  uint32_t index, Tag, offset;
 
   // address: tag (32-8-6=18), index (256 lines - 8b), offset word (16 words, 4b), offset byte (4B - 2b)
   Tag = address >> 14;
@@ -64,8 +63,6 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
   index = (address >> 6) & 0xFF; // shift 6 bits to the right and aplly mask
 
   offset = address & (BLOCK_SIZE - 1);
-
-  MemAddress = (address >> 14) << 14;
   
   CacheLine* Line = cache.L1.line;
   Line += index;
@@ -86,45 +83,33 @@ void accessL1(uint32_t address, uint8_t *data, uint32_t mode) {
   
   else {
     if(Line->Dirty){
-      accessL2(address,Line->Data,MODE_WRITE);
+      uint32_t addressL2 = ((Tag << 8) + index) << 6;
+      accessL2(addressL2, Line->Data, MODE_WRITE);
       Line->Data[0] = 0;
       Line->Data[WORD_SIZE] = 0;
     }
+
+    accessL2(address - offset, Line->Data , MODE_READ);
     
-
-
-
-  }
-
-  if (!Line->Valid || Line->Tag != Tag) {         
-    accessL2(MemAddress, TempBlock, MODE_READ);
-
-    if ((Line->Valid) && (Line->Dirty)) {
-      MemAddress = Line->Tag << 14;
-      accessDRAM(MemAddress, Line->Data, MODE_WRITE);
+    if (mode == MODE_READ) {
+      memcpy(data, &(Line->Data[offset]), WORD_SIZE);
+      time += L1_READ_TIME;
+      Line->Dirty = 0; 
+      Line->Valid = 1;
+      Line->Tag = Tag;
     }
-
-    memcpy(Line->Data, TempBlock, BLOCK_SIZE);
-    Line->Valid = 1;
-    Line->Tag = Tag;
-    Line->Dirty = 0;
-  }
-
-  if (mode == MODE_READ) { // read
-    memcpy(data, &Line->Data[offset], WORD_SIZE);
-    time += L1_READ_TIME;
-  }
-
-  if (mode == MODE_WRITE) { // write
-    memcpy(&Line->Data[offset], data, WORD_SIZE);
-    time += L1_WRITE_TIME;
-    Line->Dirty = 1;
+    if (mode == MODE_WRITE) {
+      memcpy(&(Line->Data[offset]), data, WORD_SIZE);
+      time += L1_WRITE_TIME;
+      Line->Dirty = 1;
+      Line->Valid = 1;
+      Line->Tag = Tag;
+    }
   }
 }
 
 void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
   uint32_t index, Tag, MemAddress, offset;
-  uint8_t TempBlock[BLOCK_SIZE];
 
   // address: tag (32-9-6=17)
   Tag = address >> 15;
@@ -138,29 +123,43 @@ void accessL2(uint32_t address, uint8_t *data, uint32_t mode) {
   CacheLine* Line = cache.L2.line;
   Line += index;
 
-  if (!Line->Valid || Line->Tag != Tag) {         
-  accessDRAM(MemAddress, TempBlock, MODE_READ);
+  if (Line->Valid && Line->Tag == Tag){ // hit
+      
+    if (mode == MODE_READ) { // read
+      memcpy(data, &Line->Data[offset], WORD_SIZE);
+      time += L2_READ_TIME;
+    }
 
-  if ((Line->Valid) && (Line->Dirty)) {
-    MemAddress = Line->Tag << 14;
-    accessDRAM(MemAddress, Line->Data, MODE_WRITE);
+    if (mode == MODE_WRITE) { // write
+      memcpy(&Line->Data[offset], data, WORD_SIZE);
+      time += L2_WRITE_TIME;
+      Line->Dirty = 1;
+    }
   }
 
-    memcpy(Line->Data, TempBlock, BLOCK_SIZE);
-    Line->Valid = 1;
-    Line->Tag = Tag;
-    Line->Dirty = 0;
-  }
+  else {
+    if(Line->Dirty){
+      accessDRAM(MemAddress, Line->Data, MODE_WRITE);
+      Line->Data[0] = 0;
+      Line->Data[WORD_SIZE] = 0;
+    }
 
-  if (mode == MODE_READ) { // read
-    memcpy(data, &Line->Data[offset], WORD_SIZE);
-    time += L1_READ_TIME;
-  }
-
-  if (mode == MODE_WRITE) { // write
-    memcpy(&Line->Data[offset], data, WORD_SIZE);
-    time += L1_WRITE_TIME;
-    Line->Dirty = 1;
+    accessDRAM(MemAddress, Line->Data , MODE_READ);
+    
+    if (mode == MODE_READ) {
+      memcpy(data, &(Line->Data[offset]), WORD_SIZE);
+      time += L2_READ_TIME;
+      Line->Dirty = 0; 
+      Line->Valid = 1;
+      Line->Tag = Tag;
+    }
+    if (mode == MODE_WRITE) {
+      memcpy(&(Line->Data[offset]), data, WORD_SIZE);
+      time += L2_WRITE_TIME;
+      Line->Dirty = 1;
+      Line->Valid = 1;
+      Line->Tag = Tag;
+    }
   }
 }
 
