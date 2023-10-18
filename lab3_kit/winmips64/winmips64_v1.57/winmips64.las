@@ -1,1 +1,1 @@
-\\wsl.localhost\Ubuntu\home\henriquesilva\IST\OC\OC-Proj\lab3_kit\prog24.s
+\\wsl.localhost\Ubuntu\home\henriquesilva\IST\OC\OC-Proj\lab3_kit\prog25.s
